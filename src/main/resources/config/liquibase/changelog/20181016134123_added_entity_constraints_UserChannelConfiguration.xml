@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity UserChannelConfiguration.
+    -->
+    <changeSet id="20181016134123-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="event_delivery_status_id"
+                                 baseTableName="user_channel_configuration"
+                                 constraintName="fk_user_channel_configuration_event_delivery_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="event_delivery_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="delivery_channel_id"
+                                 baseTableName="user_channel_configuration"
+                                 constraintName="fk_user_channel_configuration_delivery_channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="delivery_channel"/>
+
+    </changeSet>
+</databaseChangeLog>
